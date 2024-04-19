@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import datetime as dt
 
-file_path = 'data_storage\philosophers.csv'
+file_path = 'philosophers.csv'
 data = pd.read_csv(file_path)
 data['date'] = pd.to_datetime(data['date']).dt.date
 
