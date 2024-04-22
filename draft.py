@@ -3,7 +3,7 @@ import streamlit as st
 import datetime as dt
 
 # Import data
-file_path = "data_storage\philosophers.csv"
+file_path = "philosophers.csv"
 data = pd.read_csv(file_path)
 data['date'] = pd.to_datetime(data['date'])
 data['date'] = pd.to_datetime(data['date']).dt.date
@@ -36,7 +36,7 @@ total_interest = period_select.drop('date', axis=1).sum()
 winner = total_interest.idxmax()
 # Web
 st.subheader(f'The most popular philosopher of the period was: {winner}')
-image_path = f"data_storage/{winner}.jpg"
+image_path = f"{winner}.jpg"
 st.image(image_path, width=300)
 st.bar_chart(total_interest)
 
